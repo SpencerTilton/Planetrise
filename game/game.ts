@@ -9,6 +9,11 @@ class Game extends ex.Engine {
     constructor() {
         super({ width: 1920, height: 1080, /*displayMode: DisplayMode.FullScreen*/ });
     }
+
+    public start() {
+        this.add("testScene", new TestScene());
+        return super.start();
+    }
 }
 
 // create an asset loader
