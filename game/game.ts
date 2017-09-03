@@ -7,11 +7,17 @@
 
 class Game extends ex.Engine {
     constructor() {
-        super({ width: 1920, height: 1080, /*displayMode: DisplayMode.FullScreen*/ });
+        super({ 
+            width: 960 /*1920*/, 
+            height: 540 /*1080*/, 
+            displayMode: ex.DisplayMode.FullScreen,
+            backgroundColor: ex.Color.Gray,
+            pointerScope: ex.Input.PointerScope.Document
+        });
     }
 
     public start() {
-        this.add("testScene", new TestScene());
+        //this.add("testScene", new TestScene());
         return super.start();
     }
 }
