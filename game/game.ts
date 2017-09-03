@@ -10,7 +10,7 @@ class Game extends ex.Engine {
         super({ 
             width: 1920, 
             height: 1080, 
-            displayMode: ex.DisplayMode.Fixed,
+            displayMode: ex.DisplayMode.FullScreen,
             backgroundColor: ex.Color.Gray,
             pointerScope: ex.Input.PointerScope.Document
         });

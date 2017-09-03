@@ -27,8 +27,8 @@ var Game = /** @class */ (function (_super) {
     __extends(Game, _super);
     function Game() {
         return _super.call(this, {
-            width: 100 /*1920*/,
-            height: 100 /*1080*/,
+            width: 1920,
+            height: 1080,
             displayMode: ex.DisplayMode.Fixed,
             backgroundColor: ex.Color.Gray,
             pointerScope: ex.Input.PointerScope.Document
