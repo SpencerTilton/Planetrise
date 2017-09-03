@@ -8,9 +8,9 @@
 class Game extends ex.Engine {
     constructor() {
         super({ 
-            width: 960 /*1920*/, 
-            height: 540 /*1080*/, 
-            displayMode: ex.DisplayMode.FullScreen,
+            width: 1920, 
+            height: 1080, 
+            displayMode: ex.DisplayMode.Fixed,
             backgroundColor: ex.Color.Gray,
             pointerScope: ex.Input.PointerScope.Document
         });
