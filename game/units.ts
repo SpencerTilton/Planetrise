@@ -21,7 +21,7 @@ class WorkerUnit extends Unit {
 
 
     public onInitialize(engine: ex.Engine){
-
+        this.addDrawing(resources.roboto.asSprite());
     }
 
     // see selectableObjects.ts

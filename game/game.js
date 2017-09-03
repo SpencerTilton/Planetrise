@@ -29,12 +29,12 @@ var Game = /** @class */ (function (_super) {
         return _super.call(this, {
             width: 1920,
             height: 1080,
-            displayMode: ex.DisplayMode.Fixed,
+            displayMode: ex.DisplayMode.FullScreen,
             backgroundColor: ex.Color.Gray,
             pointerScope: ex.Input.PointerScope.Document
         }) || this;
     }
-    Game.prototype.start = function () {
+    Game.prototype.start = function (loader) {
         //this.add("testScene", new TestScene());
         return _super.prototype.start.call(this);
     };
@@ -42,15 +42,21 @@ var Game = /** @class */ (function (_super) {
 }(ex.Engine));
 // create an asset loader
 var loader = new ex.Loader();
-var resources = {};
+var resources = {
+    /* include resources here */
+    roboto: new ex.Texture("assets/units/roboto/roboto.png")
+    //txPlayer: new ex.Texture("assets/tex/player.png")
+};
 // queue resources for loading
 for (var r in resources) {
     loader.addResource(resources[r]);
 }
 // uncomment loader after adding resources
 var game = new Game();
-game.start().then(function () {
+game.start(loader).then(function () {
     // start your game!
+    var worker1 = new WorkerUnit();
+    game.add(worker1);
 });
 var MainMenu = /** @class */ (function (_super) {
     __extends(MainMenu, _super);
@@ -94,6 +100,7 @@ var WorkerUnit = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     WorkerUnit.prototype.onInitialize = function (engine) {
+        this.addDrawing(resources.roboto.asSprite());
     };
     // see selectableObjects.ts
     WorkerUnit.prototype.Controlls = function () {

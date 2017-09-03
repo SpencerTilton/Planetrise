@@ -16,7 +16,7 @@ class Game extends ex.Engine {
         });
     }
 
-    public start() {
+    public start(loader: ex.Loader) {
         //this.add("testScene", new TestScene());
         return super.start();
     }
@@ -27,6 +27,7 @@ var loader = new ex.Loader();
 var resources = {
 
     /* include resources here */
+    roboto: new ex.Texture("assets/units/roboto/roboto.png")
     //txPlayer: new ex.Texture("assets/tex/player.png")
 
 };
@@ -38,8 +39,9 @@ for (var r in resources) {
 
 // uncomment loader after adding resources
 var game = new Game();
-game.start(/* loader */).then(() => {
-
+game.start(loader).then(() => {
     // start your game!
+    var worker1 = new WorkerUnit();
+    game.add(worker1);
 
 });
